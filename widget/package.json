@@ -1,0 +1,32 @@
+{
+  "name": "widget_app",
+  "version": "1.0.0",
+  "description": "A widget made using react",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "author": "Tanya Jain <jtanya34@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^3.6.0",
+    "html-webpack-plugin": "^4.3.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-feather": "^2.0.8",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
