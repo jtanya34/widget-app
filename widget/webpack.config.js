@@ -6,7 +6,8 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
   filename: "./index.html"
 });
 
-module.exports = {
+module.exports = [
+  {
     entry: {
         app: './src/index.js',
         },
@@ -14,6 +15,7 @@ module.exports = {
             filename: 'widget.bundle.js',
             path: path.resolve(__dirname, '../public'),
             },
+            
   module: {
     rules: [
       {
@@ -31,4 +33,34 @@ module.exports = {
    
   },
   plugins: [htmlWebpackPlugin]
-};
+},
+{
+  entry: {
+      app: './src/index.js',
+      },
+      output: {
+          filename: 'main.js',
+          path: path.resolve(__dirname, './dist'),
+          },
+          
+module: {
+  rules: [
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: "babel-loader"
+      }
+    },
+    {
+      test: /\.css$/,
+      use: ["style-loader", "css-loader"]
+    }
+  ],
+ 
+},
+plugins: [htmlWebpackPlugin]
+},
+
+
+];

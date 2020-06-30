@@ -9,15 +9,14 @@ import '../css/style.css';
 //# icon
 import  { Phone } from 'react-feather';
 
-function Widget() {
+function Widget(props) {
     const [title, setTitle] = useState(undefined)
     const [number, setNumber] = useState(undefined)
 
       //* Fetch Api Data
     useEffect(() => {
         (async () => {
-            const response = await fetch(
-                'https://codifyinditest.com/script_test/api-test/')
+            const response = await fetch(props.url)
             const data = await response.json()
             const {
                 labels,
@@ -46,5 +45,9 @@ function Widget() {
     </div>
   );
 }
+Widget.defaultProps={
+    url: 'https://codifyinditest.com/script_test/api-test/'
+}
 
 export default Widget;
+
